@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">SEG4105_CalorieTrackerApp</string>
+    <string name="take_a_photo_of_your_food">Take a photo of your food</string>
+    <string name="todo">TODO</string>
+    <string name="todo2">TODO</string>
+    <string name="todo3">TODO3</string>
 </resources>
