@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TakePhotoActivity">
+
+    <!-- IMAGE PLEIN ÉCRAN (aperçu de la photo / image fixe pour l’instant) -->
+    <ImageView
+        android:id="@+id/photoPreview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/add_meal"
+    android:contentDescription="@string/app_name"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- VIGNETTE EN BAS À GAUCHE -->
+    <FrameLayout
+        android:id="@+id/thumbnailContainer"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- MINIATURE -->
+        <ImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/thumbnail"
+            android:background="@drawable/thumbnail_border" />
+
+        <!-- BADGE “03” -->
+        <TextView
+            android:id="@+id/thumbnailBadge"
+            android:layout_width="28dp"
+            android:layout_height="26dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/burger_2"
+            android:gravity="center"
+            android:text="03"
+            android:textColor="@android:color/white"
+            android:textSize="10sp" />
+    </FrameLayout>
+
+
+    <!-- BOUTON ROND “SHUTTER” EN BAS AU CENTRE -->
+    <View
+        android:id="@+id/shutterButton"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/ellipse"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
