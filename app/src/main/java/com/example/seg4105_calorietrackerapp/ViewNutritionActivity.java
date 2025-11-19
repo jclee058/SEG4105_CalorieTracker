@@ -1,4 +1,5 @@
 package com.example.seg4105_calorietrackerapp;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -9,9 +10,9 @@ import androidx.appcompat.app.AppCompatActivity;
 public class ViewNutritionActivity extends AppCompatActivity {
 
     private ImageButton btnBack;
-    private ImageButton btnArrowRight;
     private Button btnSaveMeal;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,16 +23,11 @@ public class ViewNutritionActivity extends AppCompatActivity {
         }
 
         btnBack = findViewById(R.id.btnBack);
-        btnArrowRight = findViewById(R.id.btnArrowRight);
-        btnSaveMeal = findViewById(R.id.btnSaveMeal);
+        btnSaveMeal = findViewById(R.id.btnSaveFood);
 
         // Retour en arrière
         btnBack.setOnClickListener(v -> finish());
 
-        // Flèche verte : navigation ou action future
-        btnArrowRight.setOnClickListener(v ->
-                Toast.makeText(this, "Next / More details 👉", Toast.LENGTH_SHORT).show()
-        );
 
         // Save
         btnSaveMeal.setOnClickListener(v ->
