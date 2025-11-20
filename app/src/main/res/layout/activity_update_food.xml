@@ -2,11 +2,38 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#80000000">   <!-- fond sombre semi-transparent -->
+    android:layout_height="match_parent">
 
-    <!-- CARTE CENTRALE D'ÉDITION -->
+    <!-- 1) IMAGE DE FOND (comme les autres écrans) -->
+    <ImageView
+        android:id="@+id/bgImageMeal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/add_meal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- FLÈCHE RETOUR EN HAUT À GAUCHE -->
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/arrow"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@android:color/black" />
+
+    <!-- 2) VOILE SOMBRE PAR-DESSUS L'IMAGE -->
+
+    <!-- 3) CARTE "EDIT" AU CENTRE -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardEditFood"
         android:layout_width="0dp"
@@ -37,7 +64,7 @@
                 android:textStyle="bold"
                 android:textColor="#333333" />
 
-            <!-- NOM DE L'ÉLÉMENT -->
+            <!-- ITEM NAME -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -45,6 +72,12 @@
                 android:text="Item Name"
                 android:textSize="12sp"
                 android:textColor="#666666" />
+
+            <View
+                android:id="@+id/dimOverlay"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="#80000000" />
 
             <EditText
                 android:id="@+id/etItemName"
@@ -56,13 +89,12 @@
                 android:inputType="textCapWords"
                 android:paddingBottom="4dp" />
 
-            <!-- petite ligne grise -->
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#DDDDDD" />
 
-            <!-- POIDS -->
+            <!-- ITEM WEIGHT -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -86,7 +118,6 @@
                 android:layout_height="1dp"
                 android:background="#DDDDDD" />
 
-            <!-- ESPACE -->
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="16dp" />

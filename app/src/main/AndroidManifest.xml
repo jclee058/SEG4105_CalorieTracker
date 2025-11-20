@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SEG4105_CalorieTrackerApp">
         <activity
-            android:name=".ConfirmPhotoActivity"
+            android:name=".ViewNutritionActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.SEG4105_CalorieTrackerApp">

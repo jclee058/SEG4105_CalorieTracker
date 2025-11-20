@@ -1,5 +1,5 @@
 package com.example.seg4105_calorietrackerapp;
-import android.annotation.SuppressLint;
+
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -12,7 +12,6 @@ public class ViewNutritionActivity extends AppCompatActivity {
     private ImageButton btnBack;
     private Button btnSaveMeal;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +22,7 @@ public class ViewNutritionActivity extends AppCompatActivity {
         }
 
         btnBack = findViewById(R.id.btnBack);
-        btnSaveMeal = findViewById(R.id.btnSaveFood);
+        btnSaveMeal = findViewById(R.id.btnSaveMeal);
 
         // Retour en arrière
         btnBack.setOnClickListener(v -> finish());

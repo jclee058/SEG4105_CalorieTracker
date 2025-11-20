@@ -4,19 +4,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".ViewNutritionActivity">
 
-    <!-- 1) IMAGE DE FOND (comme les autres écrans) -->
+    <!-- IMAGE DE FOND -->
     <ImageView
         android:id="@+id/bgImageMeal"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
         android:src="@drawable/add_meal"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- FLÈCHE RETOUR EN HAUT À GAUCHE -->
     <ImageButton
@@ -31,15 +32,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:tint="@android:color/black" />
 
-    <!-- 2) VOILE SOMBRE PAR-DESSUS L'IMAGE -->
-
-    <!-- 3) CARTE "EDIT" AU CENTRE -->
+    <!-- CARTE CENTRALE AVEC LES INFOS DU REPAS -->
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardEditFood"
+        android:id="@+id/cardMeal"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="96dp"
         app:cardCornerRadius="24dp"
         app:cardUseCompatPadding="true"
         app:cardElevation="8dp"
@@ -50,110 +51,313 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:padding="16dp">
 
             <!-- TITRE -->
             <TextView
-                android:id="@+id/tvEditTitle"
+                android:id="@+id/tvMealTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Edit"
-                android:textSize="20sp"
+                android:text="Meal"
                 android:textStyle="bold"
+                android:textSize="20sp"
                 android:textColor="#333333" />
 
-            <!-- ITEM NAME -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Item Name"
-                android:textSize="12sp"
-                android:textColor="#666666" />
-
-            <View
-                android:id="@+id/dimOverlay"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:background="#80000000" />
-
-            <EditText
-                android:id="@+id/etItemName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Sourdough bread"
-                android:textSize="14sp"
-                android:background="@android:color/transparent"
-                android:inputType="textCapWords"
-                android:paddingBottom="4dp" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#DDDDDD" />
-
-            <!-- ITEM WEIGHT -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Item Weight (grams)"
-                android:textSize="12sp"
-                android:textColor="#666666" />
-
-            <EditText
-                android:id="@+id/etItemWeight"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="100"
-                android:textSize="14sp"
-                android:background="@android:color/transparent"
-                android:inputType="number"
-                android:paddingBottom="4dp" />
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="#DDDDDD" />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="16dp" />
-
-            <!-- BOUTONS SAVE / CANCEL -->
+            <!-- LIGNE CAL / MACROS -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:gravity="center">
+                android:gravity="center_vertical"
+                android:layout_marginTop="12dp">
 
-                <Button
-                    android:id="@+id/btnSaveFood"
+                <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="44dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginEnd="8dp"
-                    android:text="Save"
-                    android:textColor="@android:color/white"
-                    android:textSize="14sp"
-                    android:background="@drawable/btn_save" />
+                    android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/btnCancelFood"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cal" />
+                    <TextView
+                        android:id="@+id/tvTotalCal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="632"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="44dp"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginStart="8dp"
-                    android:text="Cancel"
-                    android:textColor="@android:color/white"
-                    android:textSize="14sp"
-                    android:background="@drawable/btn_cancel" />
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Carbs" />
+                    <TextView
+                        android:id="@+id/tvTotalCarbs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="122 g"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Protein" />
+                    <TextView
+                        android:id="@+id/tvTotalProtein"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="42 g"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fat" />
+                    <TextView
+                        android:id="@+id/tvTotalFat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="27 g"
+                        android:textStyle="bold" />
+                </LinearLayout>
             </LinearLayout>
+
+            <!-- LISTE DES ALIMENTS (SCROLLABLE) -->
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- 1) Sourdough bread -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Sourdough bread"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="100g"
+                                android:textSize="12sp"
+                                android:textColor="#888888" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="230 Cal"
+                            android:textColor="#4CAF50" />
+                    </LinearLayout>
+
+                    <!-- 2) Cream Cheese -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Cream Cheese"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="75g"
+                                android:textSize="12sp"
+                                android:textColor="#888888" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="256 Cal"
+                            android:textColor="#4CAF50" />
+                    </LinearLayout>
+
+                    <!-- 3) Smoked Salmon -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Smoked Salmon"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="60g"
+                                android:textSize="12sp"
+                                android:textColor="#888888" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="70 Cal"
+                            android:textColor="#4CAF50" />
+                    </LinearLayout>
+
+                    <!-- 4) Egg -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8dp">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Egg"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="52g"
+                                android:textSize="12sp"
+                                android:textColor="#888888" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="74 Cal"
+                            android:textColor="#4CAF50" />
+                    </LinearLayout>
+
+                    <!-- 5) Chives -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Chives"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="5g"
+                                android:textSize="12sp"
+                                android:textColor="#888888" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="2 Cal"
+                            android:textColor="#4CAF50" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </ScrollView>
+
+            <!-- TEXTE EN BAS DE LA CARTE -->
+            <TextView
+                android:id="@+id/tvClickToEdit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Click food to edit"
+                android:textSize="11sp"
+                android:textColor="#888888"
+                android:gravity="center"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp" />
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <!-- BOUTON SAVE EN BAS -->
+    <Button
+        android:id="@+id/btnSaveMeal"
+        android:layout_width="160dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/btn_save"
+        android:text="Save"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
