@@ -144,18 +144,20 @@
                     android:textColor="@android:color/white"
                     android:textSize="14sp"/>
 
-                <TextView
+                <!-- Check button -->
+                <Button
                     android:id="@+id/tvBreakfastCheck"
-                    android:layout_width="40dp"
+                    android:layout_width="120dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center_horizontal"
-                    android:gravity="center"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/bg_check_circle"
-                    android:backgroundTint="@color/green_mid"
-                    android:text="✓"
-                    android:textSize="22sp"
+                    android:layout_marginTop="10dp"
+                    android:text="Check"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
                     android:textColor="@android:color/white"
+                    android:background="@drawable/bg_pill"
+                    android:backgroundTint="@color/green_mid"
+                    android:elevation="4dp"
                     android:visibility="gone"/>
             </LinearLayout>
 
@@ -232,18 +234,20 @@
                     android:textColor="@android:color/white"
                     android:textSize="14sp"/>
 
-                <TextView
+                <!-- Check button -->
+                <Button
                     android:id="@+id/tvLunchCheck"
-                    android:layout_width="40dp"
+                    android:layout_width="120dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center_horizontal"
-                    android:gravity="center"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/bg_check_circle"
-                    android:backgroundTint="@color/green_mid"
-                    android:text="✓"
-                    android:textSize="22sp"
+                    android:layout_marginTop="10dp"
+                    android:text="Check"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
                     android:textColor="@android:color/white"
+                    android:background="@drawable/bg_pill"
+                    android:backgroundTint="@color/green_mid"
+                    android:elevation="4dp"
                     android:visibility="gone"/>
             </LinearLayout>
 
@@ -320,18 +324,20 @@
                     android:textColor="@android:color/white"
                     android:textSize="14sp"/>
 
-                <TextView
+                <!-- Check button -->
+                <Button
                     android:id="@+id/tvDinnerCheck"
-                    android:layout_width="40dp"
+                    android:layout_width="120dp"
                     android:layout_height="40dp"
                     android:layout_gravity="center_horizontal"
-                    android:gravity="center"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/bg_check_circle"
-                    android:backgroundTint="@color/green_mid"
-                    android:text="✓"
-                    android:textSize="22sp"
+                    android:layout_marginTop="10dp"
+                    android:text="Check"
+                    android:textAllCaps="false"
+                    android:textStyle="bold"
                     android:textColor="@android:color/white"
+                    android:background="@drawable/bg_pill"
+                    android:backgroundTint="@color/green_mid"
+                    android:elevation="4dp"
                     android:visibility="gone"/>
             </LinearLayout>
 

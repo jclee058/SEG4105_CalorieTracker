@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">SEG4105_CalorieTrackerApp</string>
     <string name="change">Change</string>
+    <string name="take_photo">Take photo</string>
+    <string name="switch_camera">Switch camera</string>
+    <string name="last_photo">Last photo thumbnail</string>
+    <string name="camera_permission_denied">Camera permission denied.</string>
 </resources>

@@ -1,0 +1,60 @@
+{
+  "salmon.jpeg": {
+    "Food": true,
+    "name": "Salmon",
+    "nutritionData": {
+      "calories": 192,
+      "carbs": 70,
+      "protein": 26,
+      "fat": 32
+    }
+  },
+  "city_street.jpg": {
+    "Food": false,
+    "name": "City Street"
+  },
+  "orange_car.jpeg": {
+    "Food": false,
+    "name": "Orange Car"
+  },
+  "yogurt_bowl.jpg": {
+    "Food": true,
+    "name": "Yogurt Bowl",
+    "nutritionData": {
+      "calories": 1730,
+      "carbs": 91,
+      "protein": 40,
+      "fat": 10
+    }
+  },
+  "lemon_garlic_pasta.jpg": {
+    "Food": true,
+    "name": "Lemon Garlic Pasta",
+    "nutritionData": {
+      "calories": 116,
+      "carbs": 20,
+      "protein": 42,
+      "fat": 30
+    }
+  },
+  "steak_dinner.jpg": {
+    "Food": true,
+    "name": "Steak",
+    "nutritionData": {
+      "calories": 1897,
+      "carbs": 57,
+      "protein": 1,
+      "fat": 4
+    }
+  },
+  "egg_bacon_toast.jpg": {
+    "Food": true,
+    "name": "Egg Bacon Toast",
+    "nutritionData": {
+      "calories": 593,
+      "carbs": 10,
+      "protein": 19,
+      "fat": 38
+    }
+  }
+}
