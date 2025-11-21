@@ -90,14 +90,10 @@ After logging in, the Home page shows:
 
 These values automatically update after meals are saved in **Day View Page**.
 
----
-
 #### B) Go to DayView (Log Meals)
 1. Tap **“Log Meal”** on the Home page to open **Day View Page**.
 2. Under **Breakfast / Lunch / Dinner**, tap **“Add Meal”**.
 3. You will enter **Camera**.
-
----
 
 #### C) CameraActivity (Mock Camera)
 - Every time you enter CameraActivity, it randomly loads one test image from:
@@ -114,14 +110,10 @@ When you press the capture button:
   and the page is locked (no switching / no navigation).  
   You must press **←** to return, then re-enter CameraActivity from DayView.
 
----
-
 #### D) Meal Result
 - Displays the selected photo as the background.
 - Shows nutrition info
 - Tap **Save** to return to DayView.
-
----
 
 #### E) DayView After Saving
 The corresponding meal section will update:
@@ -132,3 +124,17 @@ The corresponding meal section will update:
 
 Meal data is stored in memory so users can revisit logged meals anytime during the session.
 
+---
+
+### 6. Run Unit Tests (if needed)
+
+**Run in Android Studio:**
+1. Open:
+   `app > src > test > java > com.example.seg4105_calorietrackerapp`
+2. Right-click `ExampleUnitTest` or `MealStoreTest`
+3. Click **Run**
+4. View results in the **Test Results** panel
+
+**Run by Gradle (from project root):**
+```bash
+./gradlew testDebugUnitTest
