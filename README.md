@@ -128,13 +128,13 @@ Meal data is stored in memory so users can revisit logged meals anytime during t
 
 ### 6. Run Unit Tests (if needed)
 
-**Run in Android Studio:**
+- **Run in Android Studio:**
 1. Open:
    `app > src > test > java > com.example.seg4105_calorietrackerapp`
 2. Right-click `ExampleUnitTest` or `MealStoreTest`
 3. Click **Run**
 4. View results in the **Test Results** panel
 
-**Run by Gradle (from project root):**
+- **Run by Gradle (from project root):**
 ```bash
 ./gradlew testDebugUnitTest
