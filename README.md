@@ -34,3 +34,101 @@ You can then run the script by:
 ```
 python calorie_analysis.py
 ```
+---
+
+## Android App (Setup / Run / Test)
+
+### 1. Prerequisites
+Please make sure you have the following installed/configured:
+
+- **Android Studio** (a recent stable version is recommended)
+- **JDK 17+** (Android Studio usually ships with a compatible JDK)
+- **Android SDK** with a recent API level (e.g., **API 33/34**)
+- One of the following:
+  - **Android Emulator** (Pixel devices recommended), or
+  - **Physical Android phone** with USB debugging enabled
+
+---
+
+### 2. Open the Project
+1. Clone or download this repository.
+2. Open **Android Studio → Open** and select the project root folder.
+3. Wait for **Gradle Sync** to finish.
+4. If Android Studio suggests upgrading Gradle or plugins, you may accept the defaults.
+
+---
+
+### 3. Run the App
+1. **Start an emulator**
+   - In Android Studio, go to **Tools → Device Manager**.
+   - If no emulator exists yet, click **Create device**, choose a **Pixel** model, and finish the setup.
+   - Click the **Play ▶** button next to the emulator to launch it.
+2. In the top toolbar, select the **app** run configuration.
+3. Click **Run ▶ (Run app)**.
+4. The app should launch directly into the **Login** screen.
+
+---
+
+### 4. Login Credentials (for grading)
+To enter the app, please use:
+
+- **Email:** `admin`
+- **Password:** `123`
+
+Any other input will be rejected.
+
+---
+
+### 5. Main Functional Test Flow
+
+#### A) Home Page – Live Summary
+After logging in, the Home page shows:
+
+- **Meals Logged** (updates from `0/3 → 1/3 → 2/3 → 3/3`)
+- **Total calories for the day**
+- **Meal Summary placeholders** (Breakfast / Lunch / Dinner names)
+
+These values automatically update after meals are saved in **Day View Page**.
+
+---
+
+#### B) Go to DayView (Log Meals)
+1. Tap **“Log Meal”** on the Home page to open **Day View Page**.
+2. Under **Breakfast / Lunch / Dinner**, tap **“Add Meal”**.
+3. You will enter **Camera**.
+
+---
+
+#### C) CameraActivity (Mock Camera)
+- Every time you enter CameraActivity, it randomly loads one test image from:
+  - `assets/test_image/`
+
+When you press the capture button:
+
+- **If the image is food:**  
+  → navigates to **Meal Result**.
+
+- **If the image is NOT food:**  
+  → a large centered hint appears:  
+  **“Please take a photo of food”**  
+  and the page is locked (no switching / no navigation).  
+  You must press **←** to return, then re-enter CameraActivity from DayView.
+
+---
+
+#### D) Meal Result
+- Displays the selected photo as the background.
+- Shows nutrition info
+- Tap **Save** to return to DayView.
+
+---
+
+#### E) DayView After Saving
+The corresponding meal section will update:
+
+- Shows the **food name** (e.g., “Yogurt Bowl”) and calories.
+- A **“Check”** button appears.
+- Tapping **Check** reopens the saved **Meal Result**.
+
+Meal data is stored in memory so users can revisit logged meals anytime during the session.
+
